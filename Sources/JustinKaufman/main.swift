@@ -22,4 +22,7 @@ struct JustinKaufman: Website {
 }
 
 // This will generate your website using the built-in Foundation theme:
-try JustinKaufman().publish(withTheme: .foundation)
+try JustinKaufman().publish(using: [
+    .generateHTML(withTheme: .foundation),
+    .deploy(using: .gitHub("JUSTINMKAUFMAN/JustinKaufman", useSSH: false))
+])
