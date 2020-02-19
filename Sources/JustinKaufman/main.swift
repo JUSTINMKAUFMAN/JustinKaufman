@@ -1,3 +1,4 @@
+import Files
 import Foundation
 import Publish
 import Plot
@@ -24,5 +25,6 @@ struct JustinKaufman: Website {
 // This will generate your website using the built-in Foundation theme:
 try JustinKaufman().publish(using: [
     .generateHTML(withTheme: .foundation),
+    .outputToGithubPages(),
     .deploy(using: .gitHub("JUSTINMKAUFMAN/JustinKaufman", useSSH: false))
 ])
